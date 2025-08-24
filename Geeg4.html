@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- META -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Riyasat Sankalp — Luxury Township on Mumbai–Pune Highway</title>
+  <meta name="description" content="The Riyasat Sankalp — premium integrated township in Nadhal, Raigad with luxury plots, villas, world-class amenities, and a high-end living experience.">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- THEME -->
+  <style>
+    :root{
+      --bg:#070b12; --bg-2:#0d1522; --ink:#e9eef7; --muted:#9fb0c6;
+      --gold:#d4af37; --gold-soft:#f2d589; --accent:#2a79ff; --stroke:rgba(255,255,255,.06);
+      --shadow:0 10px 30px rgba(0,0,0,.5); --radius:18px;
+      --grad:linear-gradient(135deg,#0d192b 0%,#0a1220 35%,#0f1f36 100%);
+      --glass:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+    }
+    /* Light theme overrides */
+    .theme-light{
+      --bg:#f6f7fb; --bg-2:#ffffff; --ink:#0b1220; --muted:#54617a;
+      --stroke:rgba(0,0,0,.08);
+      --grad:linear-gradient(135deg,#ffffff 0%,#f5f8ff 40%,#eaf0ff 100%);
+      --glass:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,.55));
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      transition:background .3s ease,color .3s ease;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; padding:14px 20px; border-radius:999px;
+      font-weight:800; letter-spacing:.2px; border:1px solid rgba(255,255,255,.12);
+      cursor:pointer; transition:.25s ease; background:linear-gradient(180deg,#1b273b,#111a2a);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 8px 18px rgba(0,0,0,.35);
+    }
+    .theme-light .btn{border-color:rgba(0,0,0,.12); background:linear-gradient(180deg,#ffffff,#eef2f9)}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(0,0,0,.45)}
+    .btn.gold{background:linear-gradient(180deg,#ffe59a,#e6c35a); color:#2b2005; border-color:#d8b44d}
+    .btn.ghost{background:transparent}
+
+    /* NAV */
+    .nav{
+      position:fixed; inset:0 0 auto 0; height:74px; z-index:50;
+      background:rgba(6,10,18,.55); backdrop-filter:saturate(140%) blur(14px);
+      border-bottom:1px solid var(--stroke);
+    }
+    .theme-light .nav{background:rgba(255,255,255,.7)}
+    .nav .inner{height:74px; display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand .logo{
+      width:40px; height:40px; border-radius:12px; background:
+      radial-gradient(ellipse at 30% 30%, var(--gold-soft), #a8861b 60%, #5c4914 100%);
+      box-shadow:inset 0 1px 8px rgba(0,0,0,.45), 0 6px 16px rgba(0,0,0,.35); position:relative;
+    }
+    .brand .word{font-family:'Playfair Display', serif; font-weight:800; letter-spacing:.3px}
+    .brand .word b{color:var(--gold)}
+    .nav a{color:var(--muted); font-weight:700; padding:10px 14px; border-radius:12px}
+    .nav a:hover{color:var(--ink); background:rgba(255,255,255,.05)}
+    .nav-cta{display:flex; gap:10px; align-items:center}
+    .toggle{margin-left:10px}
+
+    /* HERO */
+    .hero{position:relative; min-height:92vh; display:grid; place-items:center; overflow:hidden; background:var(--grad);}
+    .hero-canvas{position:absolute; inset:0; z-index:0}
+    .hero-sheen{position:absolute; inset:auto -10% 0 -10%; height:40%;
+      background:radial-gradient(50% 60% at 50% 0%, rgba(212,175,55,.22), transparent 70%); filter:blur(40px); z-index:1}
+    .hero-content{position:relative; z-index:2; text-align:center; padding:120px 0 60px}
+    .hero h1{
+      margin:0 0 14px; font-family:'Playfair Display', serif; font-weight:800; line-height:1.05;
+      font-size:clamp(36px, 5vw, 64px);
+      background:linear-gradient(180deg,#fff,#cbd6ea); -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow:0 10px 40px rgba(0,0,0,.35);
+    }
+    .theme-light .hero h1{background:linear-gradient(180deg,#0b1220,#32425f); color:transparent}
+    .hero .sub{color:var(--muted); max-width:820px; margin:0 auto 26px; font-size:1.05rem}
+    .hero .cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+
+    /* SECTIONS */
+    section{padding:80px 0; position:relative}
+    .section-title{font-family:'Playfair Display', serif; font-size:clamp(28px,3.2vw,40px); margin:0 0 12px}
+    .kicker{color:var(--gold); text-transform:uppercase; font-weight:800; letter-spacing:.2em; font-size:.8rem}
+    .lead{color:var(--muted); max-width:860px}
+
+    /* GRID & CARDS */
+    .grid{display:grid; gap:18px}
+    @media(min-width:720px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} }
+    @media(min-width:980px){ .grid.cols-4{grid-template-columns:repeat(4,1fr)} }
+    .card{background:var(--glass); border:1px solid var(--stroke); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px; color:#e8edf7}
+    .theme-light .card h3{color:#0b1220}
+    .card .muted{color:var(--muted); font-size:.95rem}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid var(--stroke); background:rgba(255,255,255,.04); color:var(--muted); font-weight:700}
+    .strip{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+    .strip .pill b{color:var(--gold)}
+
+    /* PRICING */
+    .pricing{display:grid; gap:18px}
+    @media(min-width:900px){ .pricing{grid-template-columns:1.1fr .9fr}}
+    .price-box{background:linear-gradient(160deg, rgba(212,175,55,.12), rgba(255,255,255,.02)); border:1px solid rgba(212,175,55,.35); border-radius:var(--radius); padding:22px}
+    .price{font-family:'Playfair Display', serif; font-size:clamp(32px, 3vw, 44px)}
+    .badge{display:inline-block; padding:6px 10px; border-radius:10px; background:rgba(212,175,55,.15); border:1px solid rgba(212,175,55,.35); color:#ffe4a3; font-weight:800}
+
+    /* CALCULATOR */
+    .calc-wrap{margin-top:18px}
+    .calc-grid{display:grid; gap:16px}
+    @media(min-width:980px){.calc-grid{grid-template-columns:420px 1fr}}
+    .calc .label{display:block; color:var(--gold); font-weight:800; margin-bottom:6px}
+    .input, select{width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--stroke); background:rgba(255,255,255,.04); color:var(--ink); font-size:16px}
+    .helper{font-size:12px; color:var(--muted); margin-top:6px}
+    .results{margin-top:12px; border-radius:14px; padding:12px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--stroke)}
+    .kv{display:flex; justify-content:space-between; padding:8px 2px; border-bottom:1px dashed rgba(255,255,255,.06)}
+    .kv .k{color:var(--gold); font-weight:900} .kv .v{font-weight:700}
+    .tabs{display:flex; gap:8px; margin:10px 0 8px; flex-wrap:wrap}
+    .tab-btn{flex:1; padding:10px; border:1px solid var(--stroke); border-radius:10px; background:rgba(0,0,0,.18); color:var(--muted); font-weight:800; cursor:pointer; text-align:center}
+    .tab-btn.active{background:#1d2c46; color:var(--gold); border-color:rgba(212,175,55,.45)}
+    .grid-container{overflow:hidden; transition:max-height .45s ease, padding .45s ease; max-height:0; padding:0 6px}
+    .grid-container.active{max-height:1000px; padding:6px}
+    .avail-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
+    @media(min-width:640px){.avail-grid{grid-template-columns:repeat(3,1fr)}}
+    .plot{padding:10px; border-radius:12px; background:rgba(255,255,255,.03); border:1px solid var(--stroke)}
+    .plot .small{font-size:12px; color:var(--muted)}
+    .chip{display:inline-block; padding:4px 8px; border-radius:999px; font-weight:800; font-size:12px}
+    .chip.ok{background:rgba(23,163,74,.15); border:1px solid rgba(23,163,74,.35); color:#bbf7d0}
+    .chip.sold{background:rgba(239,68,68,.15); border:1px solid rgba(239,68,68,.35); color:#fecaca}
+    .use-btn{margin-top:8px; padding:8px; border-radius:8px; border:1px solid var(--stroke); background:rgba(255,255,255,.04); color:var(--ink); cursor:pointer; font-weight:800}
+
+    /* GALLERY */
+    .gallery{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
+    @media(min-width:880px){.gallery{grid-template-columns:repeat(4,1fr)}}
+    .g-item{position:relative; overflow:hidden; border-radius:14px; border:1px solid var(--stroke); cursor:pointer}
+    .g-item img{width:100%; height:220px; object-fit:cover; display:block; transition:transform .5s ease}
+    .g-item:hover img{transform:scale(1.06)}
+
+    /* LIGHTBOX */
+    .lightbox{position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; z-index:60}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:88vw; max-height:82vh; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,.6)}
+    .lb-controls{position:absolute; inset:auto 0 24px 0; display:flex; justify-content:center; gap:12px}
+    .lb-btn{padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.2); color:#fff; background:rgba(255,255,255,.08); cursor:pointer; font-weight:800}
+
+    /* CONTACT + FORM */
+    .form{display:grid; gap:12px; margin-top:8px}
+    .form .input, .form textarea{background:rgba(255,255,255,.05)}
+    .footer{padding:28px 0; border-top:1px solid var(--stroke); color:var(--muted); text-align:center}
+
+    /* OTP multi-step */
+    .stepper{display:flex; gap:8px; margin-bottom:10px}
+    .dot{width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,.2)}
+    .dot.active{background:var(--gold)}
+
+    /* niceties */
+    .fade-up{opacity:0; transform:translateY(10px); animation:fadeUp .7s .1s forwards ease-out}
+    @keyframes fadeUp{to{opacity:1; transform:none}}
+  </style>
+
+  <!-- THREE.JS -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="inner container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="word">The <b>Riyasat</b> Sankalp</div>
+      </div>
+      <div class="nav-links" style="display:flex; gap:6px">
+        <a href="#about">About</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#location">Location</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <button class="btn ghost toggle" id="themeToggle" title="Toggle theme">☀︎/☾</button>
+        <a class="btn ghost" href="#brochure" id="dlBrochure">Download Brochure</a>
+        <a class="btn gold" href="#contact">Book a Site Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO (3D) -->
+  <header class="hero" id="home" aria-label="Hero">
+    <canvas class="hero-canvas" id="scene"></canvas>
+    <div class="hero-sheen" aria-hidden="true"></div>
+    <div class="hero-content container fade-up">
+      <div class="kicker">Nadhal · Raigad · NH48</div>
+      <h1>Where Luxury Meets Nature</h1>
+      <p class="sub">50-acre integrated township with 3-side mountain vistas, east-side river view, world-class infrastructure, and a future-ready lifestyle at the mid-spot of Mumbai & Pune.</p>
+      <div class="cta">
+        <a class="btn gold" href="#calculator">Check Plot & Price</a>
+        <a class="btn" href="#amenities">Explore Amenities</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="kicker">About</div>
+      <h2 class="section-title">A Premium, Integrated Township</h2>
+      <p class="lead">
+        Located on the Mumbai–Pune Highway (NH48), <b>The Riyasat Sankalp</b> blends luxury plots, ready villas, and selective commercial parcels—underpinned by robust infra:
+        underground electrification, water & sewage network, CC roads (100/40/30 ft), rainwater harvesting, solar for common areas, STP, and 3-layer security (boom barrier · 24×7 guards · CCTV).
+      </p>
+      <div class="grid cols-3" style="margin-top:18px">
+        <div class="card"><h3>50 Acres</h3><div class="muted">Plot sizes from 1119–12000 sq ft</div></div>
+        <div class="card"><h3>Ready to Move</h3><div class="muted">~80% development completed</div></div>
+        <div class="card"><h3>Title-Clear & RERA</h3><div class="muted">MSRDC approvals · local body clear</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section id="amenities">
+    <div class="container">
+      <div class="kicker">Amenities</div>
+      <h2 class="section-title">Designed for Everyday Grandeur</h2>
+      <div class="grid cols-4" style="margin-top:14px">
+        <div class="card">
+          <h3>Signature Parks (5)</h3>
+          <div class="muted">Pawna (kids + open gym), Skate, Jivan (watchtower & sunrise), Agni (firepit + temple), Amber (clubhouse, pool, amphitheater, gym, library, meditation, volleyball).</div>
+        </div>
+        <div class="card">
+          <h3>Community & Convenience</h3>
+          <div class="muted">Shopping center, primary school near Pawna Park, Ram Temple, dedicated bus stop.</div>
+        </div>
+        <div class="card">
+          <h3>Security & Safety</h3>
+          <div class="muted">3-layer security with access control, 10-ft concrete boundary, CCTV coverage.</div>
+        </div>
+        <div class="card">
+          <h3>Sustainable Infra</h3>
+          <div class="muted">Rainwater harvesting, STP, horticulture, solar plant for common areas.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="container">
+      <div class="kicker">Location</div>
+      <h2 class="section-title">Strategically Connected</h2>
+      <p class="lead">Perfect mid-spot between Mumbai and Pune with seamless access to rail, road, sea, and air corridors.</p>
+      <div class="strip">
+        <span class="pill"><b>5 min</b> · Chowk Railway Station</span>
+        <span class="pill"><b>30 min</b> · Navi Mumbai Intl. Airport</span>
+        <span class="pill"><b>35 min</b> · Atal Setu (Trans Harbour)</span>
+        <span class="pill"><b>40 km</b> · Lonavala · <b>31 km</b> · Khandala</span>
+        <span class="pill"><b>Nearby</b> · Hiranandani FC · Wadhwa Wise City · Godrej City</span>
+        <span class="pill"><b>Hospitals</b> · Dhirubhai Ambani (600 m)</span>
+      </div>
+      <div style="margin-top:18px; border:1px solid var(--stroke); border-radius:16px; overflow:hidden">
+        <iframe title="Map - Nadhal Raigad"
+                src="https://www.google.com/maps?q=Nadhal,Raigad&output=embed"
+                width="100%" height="380" style="border:0; display:block"></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- PRICING & USP -->
+  <section id="pricing">
+    <div class="container">
+      <div class="kicker">Pricing & USPs</div>
+      <h2 class="section-title">Transparent, Premium, Future-Proof</h2>
+      <div class="pricing">
+        <div class="price-box">
+          <div class="badge">Fixed Base Rate</div>
+          <div class="price" style="margin:10px 0 6px">₹ 6,600 / sq ft <span style="font-size:.5em; color:var(--muted)"> (Sankalp & allied)</span></div>
+          <div class="muted">Freedom to design & build. No hidden charges. 5-year free maintenance. Possession-ready options. Resale assistance available.</div>
+          <ul class="muted" style="margin:12px 0 0; padding-left:18px; line-height:1.7">
+            <li>Corner plots carry a 10% PLC.</li>
+            <li>Commercial parcels priced as per typology (~25% PLC baseline).</li>
+            <li>Home loans typically up to <b>~85% of Agreement Value</b> (as per bank policy).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Core Differentiators</h3>
+          <div class="muted">Eco-friendly planning · Title-clear & RERA · On-highway visibility (NH48) · Lifetime assistance · High-speed development · Individual 7/12 ownership · On-time delivery ethos.</div>
+          <div style="margin-top:12px"><a href="#calculator" class="btn gold">Calculate Your Plot</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY + LIGHTBOX -->
+  <section id="gallery">
+    <div class="container">
+      <div class="kicker">Gallery</div>
+      <h2 class="section-title">Visualize the Lifestyle</h2>
+      <div class="gallery" id="gal">
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2aa5?q=80&w=1400&auto=format&fit=crop" alt="Township Vista"></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c52f?q=80&w=1400&auto=format&fit=crop" alt="Luxury Villa"></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1505691723518-42c5e5baf512?q=80&w=1400&auto=format&fit=crop" alt="Green Park"></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1400&auto=format&fit=crop" alt="Clubhouse"></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1400&auto=format&fit=crop" alt="Interiors"></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1400&auto=format&fit=crop" alt="Sunrise"></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1502005229762-4658d11c1587?q=80&w=1400&auto=format&fit=crop" alt="Amenity"></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1400&auto=format&fit=crop" alt="Landscape"></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <img id="lbImg" alt="">
+      <div class="lb-controls">
+        <button class="lb-btn" id="lbPrev">◀ Prev</button>
+        <button class="lb-btn" id="lbClose">✕ Close</button>
+        <button class="lb-btn" id="lbNext">Next ▶</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="calculator">
+    <div class="container">
+      <div class="kicker">Smart Tool</div>
+      <h2 class="section-title">Quick Plot Lookup & Calculation</h2>
+      <p class="lead">Pick your project + enter the plot number. If available, we’ll auto-compute saleable area, PLC, effective rate and total estimate.</p>
+
+      <div class="calc-wrap card">
+        <div class="calc-grid">
+          <!-- LEFT -->
+          <div class="calc">
+            <label class="label" for="project">Project</label>
+            <select id="project">
+              <option value="">Choose project</option>
+              <option value="Sankalp">Riyasat Sankalp</option>
+              <option value="Bliss">Riyasat Bliss</option>
+              <option value="Meadows">Riyasat Meadows</option>
+              <option value="Sankalp Extension First">Riyasat Sankalp Extension First</option>
+              <option value="Sankalp Extension Second">Riyasat Sankalp Extension Second</option>
+            </select>
+
+            <label class="label" for="plotno" style="margin-top:10px">Plot Number</label>
+            <input id="plotno" class="input" placeholder="e.g., 181 or C-1" inputmode="text" />
+            <div class="helper">Sirf Project + Plot No. dijiye — agar plot available hai, calculation auto ho jayegi.</div>
+            <button class="btn gold" id="goBtn" style="margin-top:10px">Check & Calculate</button>
+            <div id="err" style="display:none; color:#ff6b6b; font-weight:800; margin-top:10px"></div>
+
+            <div id="resultCard" class="results" style="display:none">
+              <div class="kv"><div class="k">Project Name</div><div id="outProject" class="v"></div></div>
+              <div class="kv"><div class="k">Plot Size (sq.ft.)</div><div id="outSqft" class="v"></div></div>
+              <div class="kv"><div class="k">Saleable Area (sq.ft.)</div><div id="outSaleable" class="v"></div></div>
+              <div class="kv"><div class="k">Plot Type</div><div id="outType" class="v"></div></div>
+              <div class="kv"><div class="k">Base Rate (₹/sq.ft.)</div><div id="outBase" class="v"></div></div>
+              <div class="kv"><div class="k">PLC Applied (%)</div><div id="outPLC" class="v"></div></div>
+              <div class="kv"><div class="k">Rate After PLC (₹/sq.ft.)</div><div id="outRate" class="v"></div></div>
+              <div class="kv"><div class="k">TOTAL PRICE (₹)</div><div id="outTotal" class="v"></div></div>
+            </div>
+          </div>
+
+          <!-- RIGHT: AVAILABILITY -->
+          <div>
+            <div style="font-weight:900; color:var(--gold)">Available Plots</div>
+            <div class="tabs">
+              <button class="tab-btn" id="sankalpBtn">Sankalp</button>
+              <button class="tab-btn" id="blissBtn">Bliss</button>
+              <button class="tab-btn" id="meadowsBtn">Meadows</button>
+              <button class="tab-btn" id="sankalpExt1Btn">Sankalp Extension I</button>
+              <button class="tab-btn" id="sankalpExt2Btn">Sankalp Extension II</button>
+            </div>
+            <div class="grid-container" id="availGridContainer">
+              <div class="avail-grid" id="availGrid"></div>
+            </div>
+            <div class="helper">Tap a plot to auto-fill the calculator.</div>
+          </div>
+        </div>
+      </div>
+      <!-- DATASETS -->
+      <textarea id="blissRaw" style="display:none"><?xml version="1.0"?>
+1 1548.08 1421.92 40 Ft W Tapper
+4 3797.32 3797.28 40 Ft W/S 
+5 2427.50 2421.90 30 Ft N/W 
+6 2420.18 2416.52 30 Ft W 
+7 2411.35 2405.75 30 Ft W 
+8 2400.59 2397.14 30 Ft W 
+9 2395.85 2394.99 30 Ft W 
+10 3738.88 3263.16 30 Ft W Tapper
+12 2529.54 2529.54 30 Ft E 
+13 2529.54 2529.54 30 Ft E 
+14 2529.54 2529.54 30 Ft E 
+16 5916.32 5186.94 40 Ft S Tapper
+17 4364.80 4364.82 40 Ft S/W Corner
+18 2263.24 2263.24 30 Ft W
+26 1614.60 1614.60 30 Ft E
+36 2152.78 2152.78 40 Ft N 
+37 2152.78 2152.78 40 Ft N 
+38 2152.78 2152.78 40 Ft N T-Point
+39 2152.78 2152.78 40 Ft N 
+40 2152.78 2152.78 40 Ft N
+43 2701.66 2971.82 40 Ft W/S Corner
+45 1614.60 1614.60 30 Ft W 
+46 1614.60 1614.60 30 Ft W 
+47 1614.60 1614.60 30 Ft W 
+48 1614.60 1614.60 30 Ft W 
+49 1614.60 1614.60 30 Ft W 
+50 1614.60 1614.60 30 Ft W 
+51 1614.60 1614.60 30 Ft W 
+52 1614.60 1614.60 30 Ft W 
+53 1614.60 1614.60 30 Ft W 
+54 3398.30 3398.31 40 Ft N/W Corner
+56 1816.43 1816.43 30 Ft E 
+57 1816.43 1816.43 30 Ft E 
+58 1816.43 1816.43 30 Ft E 
+61 1816.43 1816.43 30 Ft E 
+62 1816.43 1816.43 30 Ft E
+63 1816.43 1816.43 30 Ft E 
+66 3509.17 3860.09 40 Ft E/S Corner
+67 3184.53 3502.98 40 Ft W/S Corner
+68 2368.08 2368.08 40 Ft W 
+69 2368.08 2368.08 40 Ft W 
+70 2368.08 2368.08 40 Ft W 
+71 2368.08 2368.08 40 Ft W 
+72 2368.08 2368.08 40 Ft W 
+73 2368.08 2368.08 40 Ft W 
+74 2368.08 2368.08 40 Ft W 
+75 2368.08 2368.08 40 Ft W 
+76 2368.08 2368.08 40 Ft W 
+77 2368.08 2368.08 40 Ft W 
+78 3844.04 3844.08 40 Ft W/N Corner
+79 3875.04 3875.04 40 Ft E 
+80 3875.04 3875.04 40 Ft E 
+81 3875.04 3875.04 40 Ft E 
+82 3875.04 3875.04 40 Ft E 
+83 3875.04 3875.04 40 Ft E 
+84 3875.04 3875.04 40 Ft E 
+85 3875.04 3875.04 40 Ft E 
+86 4753.71 4753.71 40 Ft E/N Corner
+87 3490.01 3490.02 40 Ft E/S Corner
+88 2841.70 2841.70 40 Ft E 
+89 3064.17 3064.17 40 Ft E 
+90 4444.24 4207.70 40 Ft E Tapper
+92 3035.45 3035.45 40 Ft W 
+93 3624.13 3986.54 40 Ft W/S Corner
+102 2104.36 2104.36 50 Ft E
+103 2104.36 2104.36 50 Ft E 
+105 2406.72 2285.71 50 Ft E 
+106 2448.81 2448.81 50 Ft E 
+107 2448.81 2448.81 50 Ft E 
+109 1589.30 1748.24 30 Ft W/N Corner
+111 1119.46 1119.46 30 Ft W 
+112 1119.46 1119.46 30 Ft W 
+122 3221.77 2927.96 30 Ft E T-Point
+124 1780.58 1559.59 30 Ft E Tapper
+126 2578.41 1989.82 30 Ft E Tapper
+127 2604.89 2604.89 30 Ft E 
+128 2604.89 2604.89 30 Ft E 
+129 2841.70 2841.70 30 Ft E T-Point
+130 1846.78 1846.80 30 Ft W/N Corner
+131 1119.46 1119.46 30 Ft W 
+132 1119.46 1119.46 30 Ft W 
+133 1119.46 1119.46 30 Ft W 
+134 1119.46 1119.46 30 Ft W 
+135 1119.46 1119.46 30 Ft W 
+136 1119.46 1119.46 30 Ft W 
+137 1119.46 1119.46 30 Ft W 
+138 1706.63 1877.30 30 Ft W/S Corner
+139 1706.63 1877.30 30 Ft E/S Corner
+141 1119.46 1119.46 30 Ft E- H
+147 1619.34 1781.27 30 Ft E/N Corner
+149 1119.46 1119.46 30 Ft W 
+150 1119.46 1119.46 30 Ft W 
+151 1119.46 1119.46 30 Ft W 
+152 1119.46 1119.46 30 Ft W 
+153 1119.46 1119.46 30 Ft W 
+154 1119.46 1119.46 30 Ft W 
+155 1119.46 1119.46 30 Ft W 
+157 1687.80 1856.57 30 Ft W/S Corner
+158 3704.00 4074.40 50 Ft E/S Corner
+159 2448.81 2448.81 50 Ft E 
+160 2448.81 2448.81 50 Ft E 
+161 2448.81 2448.81 50 Ft E 
+162 2448.81 2448.81 50 Ft E 
+163 2448.81 2448.81 50 Ft E 
+164 2395.40 2268.64 50 Ft E 
+167 2534.06 2534.06 50 Ft W 
+169 3039.43 3343.37 50 Ft W/S Corner
+170 2278.63 1595.04 30 Ft W Tapper
+171 2458.93 2162.06 30 Ft W Tapper
+173 1716.21 1716.21 30 Ft E
+176 1119.46 1119.46 30 Ft E
+179 1119.46 1119.46 30 Ft E 
+181 2574.40 2574.45 30 Ft E/N Corner
+182 3210.26 3531.28 50 Ft W/N Corner
+183 2260.44 2260.44 50 Ft W 
+184 2260.44 2260.44 50 Ft W 
+185 2260.44 2260.44 50 Ft W T-Point
+186 2260.44 2260.44 50 Ft W 
+187 2260.44 2260.44 50 Ft W 
+188 2260.44 2260.44 50 Ft W 
+191 2259.13 2259.13 50 Ft W 
+192 2386.90 2625.59 50 Ft W/S Corner
+193 1762.17 1448.98 40 Ft S Tapper
+195 1850.55 1850.55 40 Ft S T-Point
+196 2139.67 1770.14 40 Ft S Tapper
+197 2372.58 2363.77 40 Ft S 
+198 2273.77 2273.77 40 Ft N 
+199 2045.16 2045.16 40 Ft N 
+200 2045.16 2045.16 40 Ft N 
+201 2216.20 2437.82 40 Ft W/N Corner
+202 1362.18 1498.40 30 Ft W/S Corner
+203 1119.46 1119.46 30 Ft S 
+204 1119.46 1119.46 30 Ft S 
+205 1119.46 1119.46 30 Ft S 
+206 1119.46 1119.46 30 Ft S 
+207 1558.08 1402.27 30 Ft S 
+208 1598.76 1371.18 30 Ft N Tapper
+213 4226.13 4074.14 30 Ft W 
+214 3179.23 3025.29 30 Ft W Tapper
+216 2152.80 2152.80 30 Ft E 
+217 2152.80 2152.80 30 Ft E 
+222 2152.80 2152.80 30 Ft E 
+223 2152.80 2152.80 30 Ft E 
+225 2697.57 2967.32 50 Ft W/N Corner
+226 2368.08 2368.08 50 Ft W 
+227 2368.08 2368.08 50 Ft W 
+228 2368.08 2368.08 50 Ft W 
+229 2368.08 2368.08 50 Ft W 
+230 2368.08 2368.08 50 Ft W 
+231 2368.08 2368.08 50 Ft W 
+232 2368.08 2368.08 50 Ft W 
+233 2368.08 2368.08 50 Ft W 
+
+Commercial plots
+C-1 3521.87 3521.88 40 Ft E Commercial
+C-2 3204.87 3204.90 40 Ft E Commercial
+C-3 3280.76 3280.77 40 Ft E Commercial
+C-5 4298.68 4298.68 40 Ft E/S Commercial
+C-6 3936.61 3936.60 40 Ft W/S Commercial
+C-7 5381.68 5381.64 40 Ft S Commercial</textarea>
+
+      <textarea id="sankalpRaw" style="display:none">
+9 5219.44 4980.72 E 100 ft 
+10 5306.73 5116.67 E 100 ft 
+11 7275.71 6733.08 W 100 ft 
+12 5521.61 5521.93 W 100 ft 
+13 5521.61 5521.93 W 100 ft 
+14 5521.61 5521.93 West 100 ft 
+15 5521.61 5521.93 W 100 ft 
+16 5521.61 5521.93 W 100 ft 
+17 5521.61 5521.93 W 100 ft 
+18 5521.61 5521.93 W 100 ft 
+25 2368.08 2368.08 E 30 ft 
+27 2368.08 2368.08 E 30 ft 
+29 2368.08 2368.08 E 30 ft T-Point
+32 6355.78 6991.35 S/E 100 ft Corner
+37 2152.80 2152.80 W 30 ft 
+38 2152.80 2152.80 W 30 ft 
+39 2152.80 2152.80 W 30 ft 
+40 2152.80 2152.80 W 30 ft 
+53 2152.80 2152.80 W 30 ft 
+54 2152.80 2152.80 W 30 ft 
+55 2152.80 2152.80 W 30 ft 
+58 2152.80 2152.80 W 30 ft 
+73 2368.08 2368.08 W 40 ft 
+89 1119.46 1119.46 W 30 ft Villa
+91 1119.46 1119.46 W 30 ft Villa
+92 1119.46 1119.46 W 30 ft Villa
+93 1119.46 1119.46 W 30 ft Villa
+99 2272.99 2500.29 S/W 30 ft Corner
+111 2272.99 2500.29 S/E  Corner
+146 2209.57 2099.41 W 30 ft Tapper
+181 4958.48 5454.33 S/W 100 ft Corner
+182 4843.80 4843.80 S 100 ft 
+183 4843.80 4843.80 S 100 ft 
+184 4843.80 4843.80 S 100 ft 
+185 4843.80 4843.80 S 100 ft 
+187 6007.97 6608.77 S/W 100 ft Corner
+188 4843.80 4843.80 S 100 ft 
+189 4843.80 4843.80 S 100 ft 
+190 4843.80 4843.80 S 100 ft 
+191 5765.78 6342.36 S/E 100 ft Corner
+192 6088.70 6697.57 S/W 100 ft Corner
+193 4843.80 4843.80 S 100 ft 
+194 4843.80 4843.80 S 100 ft 
+195 4843.80 4843.80 S 100 ft 
+196 4843.80 4843.80 S 100 ft 
+197 4843.80 4843.80 S 100 ft 
+198 6006.96 6006.96 S 100 ft 
+209 5219.74 5741.72 N/W 100 ft Corner
+210 5752.83 5437.97 N 100 ft 
+215 6508.75 7159.63 N/W 100 ft Corner
+216 4843.80 4843.80 N 100 ft 
+217 4843.80 4843.80 N 100 ft 
+218 5823.97 5631.72 N 100 ft 
+225 2855.55 3141.10 S/W 30 ft Corner
+227 2084.07 2004.26 S 30 ft T-Point
+247 2464.68 2434.82 W 30 ft 
+248 2301.71 2410.71 S/W 30 ft Corner
+265 2645.64 2910.20 N/W 40 ft Corner
+266 2152.80 2152.80 W 40 ft 
+267 2152.80 2152.80 W 40 ft 
+268 2152.80 2152.80 W 40 ft 
+269 2152.80 2152.80 W 40 ft 
+270 2152.80 2152.80 W 40 ft 
+271 2152.80 2152.80 W 40 ft 
+C2 12013.49 15016.86 W 100 ft Commercial
+S-11 156.87 313.75   Shop First
+S-12 156.87 312.75   Shop First
+S-13 172.69 345.37   Shop First
+S-14 172.69 345.37   Shop First
+S-16 126.72 253.45   Shop First
+S-17 397.78 795.57   Shop First
+S-18 139.10 278.21   Shop First
+S-19 219.42 438.85   Shop First
+S-20 222.73 445.46   Shop First
+S-21 114.63 229.25   Shop First
+S-22 208.34 416.67   Shop First
+S-23 155.83 311.66   Shop First
+S-24 128.35 256.70   Shop First
+</textarea>
+
+      <textarea id="meadowsRaw" style="display:none">
+11 1780.69 1958.76  40 ft. S/W Corner
+12 1780.69 1958.76 40 ft. S/E Corner
+21  1767.04  1767.06  30 ft.  N/W  Corner
+25  1606.74  1528.70  30 ft.  W  Tapper
+28  2152.80  2152.80  40 ft.  N  T-Point
+29 2152.80 2152.80 40 ft. N T-Point
+30  2152.80  2152.80  40 ft.  N
+31  2152.80  2152.80  40 ft.  N
+32  2152.80  2152.80  40 ft.  N  T-Point
+33  2152.80  2152.80  40 ft.  N  T-Point
+34 2176.59 2394.25 40 ft. N/W Corner
+46 3160.85 3322.08 100 ft. S/E Corner
+49  1614.60  1614.60  30 ft.  E
+53  1614.60  1614.60  30 ft.  E
+60 1614.60 1614.60 30 ft. W
+61  1614.60  1614.60  30 ft.  W
+62  1614.60  1614.60  30 ft.  W
+63 1614.60 1614.60 30 ft. W
+64  1614.60  1614.60  30 ft.  W
+65  1614.60  1614.60  30 ft.  W
+66  1614.60  1614.60  30 ft.  W
+67 1614.60 1614.60 30 ft. W
+69  3412.51  3599.01  100 ft.  S/W  Corner
+70 2566.46 2709.90 100 ft. S/E Corner
+85 2795.20 3074.72 40 ft. N/W Corner
+86  2152.80  2152.80  40 ft.  W
+87 2152.80 2152.80 40 ft. W
+88 2152.80 2152.80 40 ft. W
+89 2152.80 2152.80 40 ft. W
+90 2152.80 2152.80 40 ft. W
+91 2152.80 2152.80 40 ft. W T-Point
+92 2152.80 2152.80 40 ft. W
+93 2152.80 2152.80 40 ft. W
+</textarea>
+
+      <textarea id="sankalpExt1Raw" style="display:none">
+3 1481.23 1476.55 East 30 Ft Normal
+4 1809.75 1719.17 East 30 Ft Tapper
+5 2114.16 2012.11 East 30 Ft Tapper
+6 2587.88 2461.73 East 30 Ft Tapper
+7 3137.06 2984.96 East 30 Ft Tapper
+8 3769.23 3588.29 East 30 Ft Tapper
+10 1095.56 1095.56 South 40 Ft Normal
+11 1095.56 1095.56 South 40 Ft Normal
+</textarea>
+
+      <textarea id="sankalpExt2Raw" style="display:none">
+1 4983.09 4983.09 North/West 100 Ft Corner
+2 1298.78 1428.66 West/South 30 Ft Corner
+3 1076.40 1076.40 South 30 Ft Normal
+4 1638.82 1465.29 South 30 Ft Tapper
+5 1352.60 1487.86 North/West 30 Ft Corner
+8 1618.37 1464.11 North 30 Ft Tapper
+9 1352.60 1487.86 West/South 30 Ft Corner
+10 1119.46 1119.46 South 30 Ft Normal
+11 1119.46 1119.46 South 30 Ft Normal
+12 1119.46 1119.46 South 30 Ft Normal
+13 1114.29 960.18 South 30 Ft Tapper
+</textarea>
+
+    </div>
+  </section>
+
+  <!-- CONTACT + MULTI-STEP OTP FORM -->
+  <section id="contact">
+    <div class="container">
+      <div class="kicker">Contact</div>
+      <h2 class="section-title">Book a Site Visit</h2>
+      <p class="lead">Tell us what you’re looking for—corner, t-point, or typical plots; residential, villa or commercial. Our advisory desk will curate options.</p>
+
+      <form class="form card" id="leadForm">
+        <div class="stepper"><span class="dot" id="d1"></span><span class="dot" id="d2"></span><span class="dot" id="d3"></span></div>
+
+        <!-- Step 1 -->
+        <div class="step" data-step="1">
+          <input class="input" type="text" id="name" placeholder="Your Name" required>
+          <input class="input" type="tel" id="phone" placeholder="Your Phone" required>
+          <button class="btn gold" type="button" id="toStep2">Continue</button>
+        </div>
+
+        <!-- Step 2 (OTP send/verify) -->
+        <div class="step" data-step="2" style="display:none">
+          <div class="helper">We’ll send a 6-digit OTP to your phone for quick verification.</div>
+          <div style="display:flex; gap:8px">
+            <button class="btn" type="button" id="sendOtp">Send OTP</button>
+            <input class="input" id="otp" placeholder="Enter OTP" maxlength="6" style="max-width:180px">
+            <button class="btn gold" type="button" id="verifyOtp">Verify</button>
+          </div>
+          <div class="helper" id="otpMsg" style="margin-top:6px"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" data-step="3" style="display:none">
+          <input class="input" type="email" id="email" placeholder="Your Email" required>
+          <textarea class="input" rows="5" id="req" placeholder="Tell us your preferred plot size, frontage road, facing, etc." required></textarea>
+          <div style="display:flex; gap:8px; flex-wrap:wrap">
+            <button class="btn gold" type="submit">Submit Enquiry</button>
+            <button class="btn" type="button" id="printBrochure">Print Brochure (PDF)</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">© 2025 The Riyasat Sankalp · All Rights Reserved · Nadhal, Khalapur, Raigad · Pincode 410206</div>
+  </footer>
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // ---------- Theme Toggle ----------
+    (function(){
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const LS_KEY = 'rs_theme';
+      const apply = (mode)=>{
+        if(mode==='light') root.classList.add('theme-light');
+        else root.classList.remove('theme-light');
+        localStorage.setItem(LS_KEY, mode);
+      };
+      apply(localStorage.getItem(LS_KEY)||'dark');
+      btn.addEventListener('click', ()=>{
+        const isLight = root.classList.toggle('theme-light');
+        localStorage.setItem(LS_KEY, isLight?'light':'dark');
+      });
+    })();
+
+    // ---------- 3D Hero ----------
+    (function(){
+      const canvas = document.getElementById('scene');
+      const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 1000);
+      camera.position.set(0, 0.6, 6);
+
+      const resize = ()=>{
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        renderer.setPixelRatio(dpr);
+        renderer.setSize(innerWidth, innerHeight);
+        camera.aspect = innerWidth/innerHeight;
+        camera.updateProjectionMatrix();
+      };
+      window.addEventListener('resize', resize, {passive:true});
+      resize();
+
+      scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+      const dir = new THREE.DirectionalLight(0xffe4a3, 0.8);
+      dir.position.set(3,4,2);
+      scene.add(dir);
+
+      const mat = new THREE.MeshBasicMaterial({color:0xd4af37, wireframe:true, transparent:true});
+      const group = new THREE.Group(); scene.add(group);
+      for(let i=0;i<6;i++){
+        const geo = new THREE.TorusGeometry(1.4+(i*0.28), 0.02+(i*0.003), 32, 180);
+        const m = mat.clone(); m.opacity = 0.18 + i*0.07;
+        const torus = new THREE.Mesh(geo, m);
+        torus.rotation.x = 0.4 + i*0.06; torus.rotation.y = i*0.2;
+        group.add(torus);
+      }
+
+      const starGeo = new THREE.BufferGeometry();
+      const starCount = 800;
+      const pos = new Float32Array(starCount*3);
+      for(let i=0;i<starCount;i++){
+        pos[i*3]=(Math.random()-0.5)*40;
+        pos[i*3+1]=(Math.random()-0.5)*40;
+        pos[i*3+2]=(Math.random()-0.5)*40;
+      }
+      starGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      const stars = new THREE.Points(starGeo, new THREE.PointsMaterial({color:0x8aa3c7, size:0.02, transparent:true, opacity:.6}));
+      scene.add(stars);
+
+      let t = 0;
+      (function tick(){
+        t+=0.004;
+        group.rotation.y+=0.0025;
+        group.rotation.x=0.3+Math.sin(t)*0.08;
+        stars.rotation.y-=0.0007;
+        renderer.render(scene, camera);
+        requestAnimationFrame(tick);
+      })();
+    })();
+
+    // ---------- Calculator ----------
+    const fmtInt = new Intl.NumberFormat('en-IN',{maximumFractionDigits:0});
+    const fmt2 = new Intl.NumberFormat('en-IN',{minimumFractionDigits:0, maximumFractionDigits:2});
+    function blissSlab(area){ if(area<=1500)return 6500; if(area<=2000)return 6400; if(area<=3000)return 6200; return 6000; }
+    const PLC = { Normal:0, Corner:10, Commercial:25 };
+
+    function parsePlots(raw) {
+      const lines = raw.trim().split('\n'); const out=[];
+      lines.forEach(line=>{
+        const tokens = line.split(/\s+/).filter(Boolean); if(tokens.length<3) return;
+        const plot = tokens[0];
+        const sqft = parseFloat(tokens[1]);
+        const saleable = parseFloat(tokens[2]);
+        const remaining = tokens.slice(3).join(' ');
+        const roadMatch = remaining.match(/(\d+\s*ft\.?|\d+\s*Ft\.?|\d+\s*Ft|\d+\s*ft)/i);
+        const road = roadMatch ? roadMatch[1].replace(/\s+/g,' ').trim() : '';
+        const facingMatch = remaining.match(/\b([NEWS](?:\/[NEWS])?|West|North|South|East)\b/i);
+        const facing = facingMatch ? facingMatch[1].toUpperCase() : '';
+        let shape = remaining.replace(road,'').replace(facing,'').trim();
+        if(/S\/E|S\/W|W\/N|N\/W|W\/S/i.test(remaining)) shape='Corner';
+        if(/corner/i.test(remaining)) shape='Corner';
+        if(/t-?point/i.test(remaining)) shape='T-Point';
+        if(/tapper/i.test(remaining)) shape='Tapper';
+        if(/commercial/i.test(remaining)) shape='Commercial';
+        out.push({plot:String(plot).toUpperCase(), sqft:+sqft, saleable:+saleable, facing, road, shape:shape.trim(), status:'Available'});
+      });
+      return out;
+    }
+    function parseBliss(raw){
+      const lines = raw.trim().split('\n'); const out=[];
+      lines.forEach(line=>{
+        const tokens = line.split(/\s+/).filter(Boolean); if(tokens.length<3) return;
+        const key = tokens[0].toUpperCase();
+        const sqft = +parseFloat(tokens[1]);
+        const saleable = +parseFloat(tokens[2]);
+        const remaining = tokens.slice(3).join(' ');
+        const roadMatch = remaining.match(/(\d+\s*ft\.?|\d+\s*Ft\.?|\d+\s*Ft|\d+\s*ft)/i);
+        const road = roadMatch ? roadMatch[1].replace(/\s+/g,' ').trim() : '';
+        let shape = '';
+        if(/commercial/i.test(remaining)) shape='Commercial';
+        else if(/corner/i.test(remaining)) shape='Corner';
+        else if(/t-?point/i.test(remaining)) shape='T-Point';
+        else if(/tapper/i.test(remaining)) shape='Tapper';
+        const facingMatch = remaining.match(/\b([NEWS](?:\/[NEWS])?)\b/i);
+        const facing = facingMatch ? facingMatch[1].toUpperCase() : '';
+        out.push({plot:key, sqft, saleable, facing, road, shape, status:'Available'});
+      });
+      return out;
+    }
+
+    const BLISS = parseBliss(document.getElementById('blissRaw').value);
+    const SANKALP = parsePlots(document.getElementById('sankalpRaw').value);
+    const MEADOWS = parsePlots(document.getElementById('meadowsRaw').value);
+    const SANKALP_EXT1 = parsePlots(document.getElementById('sankalpExt1Raw').value);
+    const SANKALP_EXT2 = parsePlots(document.getElementById('sankalpExt2Raw').value);
+
+    const REG = {
+      Sankalp:SANKALP, Bliss:BLISS, Meadows:MEADOWS,
+      'Sankalp Extension First': SANKALP_EXT1,
+      'Sankalp Extension Second': SANKALP_EXT2
+    };
+
+    const projectEl = document.getElementById('project');
+    const plotEl = document.getElementById('plotno');
+    const goBtn = document.getElementById('goBtn');
+    const errEl = document.getElementById('err');
+    const resultCard = document.getElementById('resultCard');
+    const outProject = document.getElementById('outProject');
+    const outSqft = document.getElementById('outSqft');
+    const outSaleable = document.getElementById('outSaleable');
+    const outType = document.getElementById('outType');
+    const outBase = document.getElementById('outBase');
+    const outPLC = document.getElementById('outPLC');
+    const outRate = document.getElementById('outRate');
+    const outTotal = document.getElementById('outTotal');
+    const availGrid = document.getElementById('availGrid');
+    const availGridContainer = document.getElementById('availGridContainer');
+
+    function findPlot(project, key){
+      if(!project || !key) return null;
+      const arr = REG[project] || [];
+      const k = String(key).toUpperCase().trim();
+      return arr.find(p => String(p.plot).toUpperCase() === k) || null;
+    }
+    function determinePlotType(p){
+      if(!p) return 'Normal';
+      if(/^C-/.test(p.plot) || /commercial/i.test(p.shape)) return 'Commercial';
+      if(/corner/i.test(p.shape) || p.shape === 'Corner') return 'Corner';
+      return 'Normal';
+    }
+    function baseRateFor(project, saleable){
+      return (project==='Bliss') ? blissSlab(saleable) : 6600;
+    }
+
+    function calculateAndShow(project, plotNo){
+      errEl.style.display='none'; resultCard.style.display='none';
+      if(!project || !plotNo){
+        errEl.style.display='block'; errEl.textContent='Please select project and enter plot number';
+        return;
+      }
+      const plot = findPlot(project, plotNo);
+      if(!plot || (plot.status && plot.status!=='Available')){
+        errEl.style.display='block'; errEl.textContent='Plot not available. Please search another plot.';
+        return;
+      }
+      const sqft = Number(plot.sqft) || 0;
+      const saleable = Number(plot.saleable) || Number(plot.sqft) || 0;
+      if(!(saleable>0)){
+        errEl.style.display='block'; errEl.textContent='Plot has invalid saleable area.';
+        return;
+      }
+      const pType = determinePlotType(plot);
+      const base = baseRateFor(project, saleable);
+      const plc = ({Normal:0, Corner:10, Commercial:25})[pType]||0;
+      const rateAfter = Math.round((base + base*(plc/100))*100)/100;
+      const total = Math.round(base * saleable + (base * saleable * plc / 100));
+
+      outProject.textContent = 'Riyasat ' + project;
+      outSqft.textContent = fmt2.format(sqft) + ' sq.ft.';
+      outSaleable.textContent = fmt2.format(saleable) + ' sq.ft.';
+      outType.textContent = pType;
+      outBase.textContent = '₹' + fmt2.format(base);
+      outPLC.textContent = plc + '%';
+      outRate.textContent = '₹' + fmt2.format(rateAfter);
+      outTotal.textContent = '₹' + fmtInt.format(total);
+      resultCard.style.display = 'block';
+    }
+
+    function renderAvailability(project, forceShow=false){
+      const list = REG[project] || [];
+      const isVisible = availGridContainer.classList.contains('active');
+      if(isVisible && !forceShow){ availGridContainer.classList.remove('active'); return; }
+      availGrid.innerHTML = '';
+      list.slice(0,120).forEach(p=>{
+        const div = document.createElement('div'); div.className='plot';
+        const title = document.createElement('div');
+        title.innerHTML = `<strong>#${p.plot}</strong> <div class="small" style="margin-top:6px">${p.road||''} ${p.facing? '· '+p.facing:''} ${p.shape? '· '+p.shape:''}</div>`;
+        const badge = document.createElement('div'); badge.className = 'chip ' + (p.status==='Available'?'ok':'sold'); badge.textContent = p.status==='Available' ? 'Available' : 'Sold';
+        const info = document.createElement('div'); info.className='small'; info.style.marginTop='8px'; info.textContent = 'Saleable: ' + fmt2.format(p.saleable || p.sqft || 0) + ' ft²';
+        const btn = document.createElement('button'); btn.className='use-btn'; btn.textContent = p.status==='Available' ? 'Use this plot' : 'Not available'; btn.disabled = p.status!=='Available';
+        btn.addEventListener('click', ()=>{
+          document.getElementById('project').value=project;
+          document.getElementById('plotno').value=p.plot;
+          calculateAndShow(project, p.plot);
+          window.scrollTo({top:0, behavior:'smooth'});
+        });
+        div.append(title, badge, info, btn);
+        availGrid.appendChild(div);
+      });
+      availGridContainer.classList.add('active');
+    }
+
+    const mapTabs = {
+      sankalpBtn:'Sankalp',
+      blissBtn:'Bliss',
+      meadowsBtn:'Meadows',
+      sankalpExt1Btn:'Sankalp Extension I',
+      sankalpExt2Btn:'Sankalp Extension II'
+    };
+    Object.keys(mapTabs).forEach(id=>{
+      const b = document.getElementById(id);
+      b.addEventListener('click', ()=>{
+        document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+        b.classList.add('active');
+        renderAvailability(mapTabs[id], true);
+      });
+    });
+
+    document.getElementById('goBtn').addEventListener('click', ()=>calculateAndShow(projectEl.value, plotEl.value));
+    document.getElementById('plotno').addEventListener('keydown', (e)=>{ if(e.key==='Enter') calculateAndShow(projectEl.value, plotEl.value); });
+
+    // ---------- Gallery Lightbox ----------
+    (function(){
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      document.getElementById('galleryGrid').addEventListener('click', (e)=>{
+        const t = e.target.closest('.g-item img'); if(!t) return;
+        img.src = t.src; img.alt = t.alt;
+        lb.classList.add('active');
+      });
+      lb.addEventListener('click', ()=>lb.classList.remove('active'));
+    })();
+
+    // ---------- Multi-Step Form + OTP (simulated) ----------
+    (function(){
+      const steps = [...document.querySelectorAll('.msf-step')];
+      const show = (n)=>steps.forEach(s=>s.style.display = (s.dataset.step==n?'block':'none'));
+
+      const name=document.getElementById('name'),
+            phone=document.getElementById('phone'),
+            email=document.getElementById('email'),
+            interest=document.getElementById('interest');
+
+      const otpHint=document.getElementById('otpHint'),
+            otpInput=document.getElementById('otp'),
+            success=document.getElementById('msfSuccess');
+
+      const next1=document.getElementById('next1'),
+            back1=document.getElementById('back1'),
+            verify=document.getElementById('verifyOtp'),
+            back2=document.getElementById('back2'),
+            submit=document.getElementById('submitLead');
+
+      let otp = '0000';
+      next1.addEventListener('click', ()=>{
+        const ph = phone.value.trim();
+        const nm = name.value.trim();
+        const em = email.value.trim();
+        if(nm.length<2 || !/^\d{10}$/.test(ph) || !/.+@.+\..+/.test(em) || !interest.value){
+          alert('Please fill all fields correctly.');
+          return;
+        }
+        otp = String(Math.floor(1000+Math.random()*9000));
+        otpHint.textContent = otp; // demo surface
+        show(2);
+      });
+
+      back1 && back1.addEventListener('click', ()=>show(1));
+
+      verify.addEventListener('click', ()=>{
+        if(otpInput.value.trim()!==otp){ alert('Invalid OTP'); return; }
+        show(3);
+      });
+
+      back2.addEventListener('click', ()=>show(2));
+
+      submit.addEventListener('click', ()=>{
+        success.style.display='block';
+        setTimeout(()=>{
+          success.style.display='none';
+          show(1);
+          document.getElementById('msf').querySelectorAll('input,textarea,select').forEach(i=>i.value='');
+        }, 2200);
+      });
+    })();
+
+    // ---------- PDF Brochure (jsPDF) ----------
+    document.getElementById('dlBrochure').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({unit:'pt', format:'a4'});
+
+      const gold = [212,175,55];
+      const ink = [20,28,44];
+
+      doc.setFillColor(gold[0],gold[1],gold[2]); doc.rect(0,0,595,120,'F');
+      doc.setFont('helvetica','bold'); doc.setTextColor(20); doc.setFontSize(24);
+      doc.text('The Riyasat Sankalp', 40, 60);
+      doc.setFontSize(12); doc.text('Luxury Township — Nadhal, Raigad (NH48)', 40, 88);
+
+      doc.setDrawColor(gold[0],gold[1],gold[2]); doc.line(40,150,555,150);
+      doc.setTextColor(ink[0],ink[1],ink[2]); doc.setFontSize(14);
+
+      const lines = [
+        '• 50-acre integrated township · plots 1119–12000 sq.ft.',
+        '• Infra: underground electrification, water & sewage, CC roads 100/40/30 ft, RWH, STP, solar for commons.',
+        '• Security: 3-layer (boom barrier · 24×7 guards · CCTV).',
+        '• Signature Parks: Pawna, Skate, Jivan, Agni, Amber (clubhouse, pool, amphitheater, gym, library, meditation, volleyball).',
+        '• Location: 5 min Chowk Station · 30 min NMIA · 35 min Atal Setu · 40 km Lonavala · 31 km Khandala.',
+        '• Pricing: Sankalp base ₹6,600/sq.ft. · Bliss slab up to ₹6,500/sq.ft. · 10% PLC on corner, 25% on commercial.',
+        '• Loans: up to ~85% (bank policy). Title-clear & RERA.'
+      ];
+
+      let y=180; lines.forEach(l=>{ doc.text(l,40,y); y+=24; });
+      doc.setFontSize(12);
+      doc.text('Contact: info@riyasatsankalp.com · +91-XXXXXXXXXX', 40, 720);
+      doc.save('Riyasat-Sankalp-Brochure.pdf');
+    });
+  </script>
+</body>
+</html>
